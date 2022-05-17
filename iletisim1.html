@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta none="viewport" content="width-device-width,initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie-edge";>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="iletisim.css">
+    </head>
+    <body>
+        
+        <div class="container">
+            <form onsubmit="sendEmail(); reset();"> <!--Burda kaldım return false;-->
+                <h3>GET IN TOUCH</h3>
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="text" id="phone" placeholder="Phone no" required>
+                <textarea id="message" rows="4" placeholder="How can we help you?"></textarea>
+                <button type="submit" class="btn btn-outline-secondary">Gönder</button>
+            </form>
+        </div>
+ <script src="https://smtpjs.com/v3/smtp.js"></script>
+ <script>
+     function sendEmail(){
+     Email.send({
+     Host : "smtp.gmail.com",
+     Username : "mualla.krbyr@gmail.com",
+     Password : "password",
+     To : 'mualla.krbyr@gmail.com',
+     From : document.getElementById("email").value,
+     Subject : "New contact Dorm Enquiry",
+     Body : "Name: "+document.getElementById("name").value
+     +"<br> Email: " + document.getElementById("email").value
+     +"<br> Phone No: " + document.getElementById("phone").value
+     +"<br> Messagel: " + document.getElementById("message").value
+     }).then(
+     message => alert("Message Sent Succesfully")
+     );
+    }
+ </script>
+        
+
+    </body>
+</html>

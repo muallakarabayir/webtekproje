@@ -1,0 +1,214 @@
+*{ 
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+    
+    
+  }
+  body{
+      background-color: white;
+      background-repeat: no-repeat;
+      background-position:center;
+      background-size: cover;
+      background-attachment: fixed;
+      background-image: url(images/af0a67acb1da6998995b122e169725d1.png);
+  }
+  
+  nav{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      min-height: 8vh;
+      background-color: rgb(36, 13, 54);
+      font-family:'Poppins',sans-serif;
+      
+  }
+  .logo{
+      color:white;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 20x;
+  }
+  .nav-links{
+      display: flex;
+      justify-content: space-around;
+      width: 20%;
+  }
+  .nav-links li{
+      list-style: none;
+  }
+  .nav-links a{
+      color:white;
+      text-decoration: none;
+      letter-spacing: 2px;
+      font-weight:bold ;
+      font-size: 15px;
+      margin-right: 20px;
+  }
+  .burger{
+      display: none;
+      cursor:pointer;
+  
+  }
+  .burger div{
+      width: 25px;
+      height: 5px;
+      background-color: white;
+      margin: 5px;
+      transition: all 0.3s ease ;
+  }
+  article{
+      color: white;
+      font-size:14px ;
+  }
+  @media screen and (max-width:1024) {
+      .nav-links{
+          width: 60%;
+          
+      }
+  }
+  @media screen and (max-width:768px){
+      body{
+          overflow-x: hidden;
+      }
+      
+      .nav-links{
+          position: absolute;
+          right: 0px;
+          height:92vh;
+          top:8vh;
+          background-color:rgb(36, 13, 54);
+          height: 792px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: 50%;
+          transform: translateX(100%);
+          transition:transform 0.5s ease-in;
+          z-index: 1111;
+      }
+      .nav-links li{
+          opacity: 100;
+      }
+      .burger{
+          display: block;
+      }
+      img{
+        width: 100%;
+      }
+      .img_1,.img_2,.img_3{
+        width: 100%;
+        height: auto;
+      }
+    
+  }
+  .nav-active{
+        transform: translateX(0%);
+  }
+  @keyframes navLikFade{
+      from{
+         opacity: 0;
+         transform: translateX(50px);
+      }
+      to{
+          opacity: 1;
+          transform: translateX(0px);
+  
+      }
+  }
+  .toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+  }
+  .toggle .line2{
+      opacity: 0;
+  }
+  .toggle .line3{
+      transform: rotate(45deg) translate(-5px,-6px);
+  }
+/* Slideshow container */
+.slideshow-container {
+    
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 20px;
+    
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+  
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+   
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+  
+  /* Caption text */
+  .text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+  
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
